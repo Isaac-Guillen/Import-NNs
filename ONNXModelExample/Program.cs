@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
 
@@ -11,7 +10,8 @@ namespace ONNXModelExample
     {
         static void Main(string[] args)
         {
-            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "/myModel.onnx";
+            string path = System.AppContext.BaseDirectory + "myModel.onnx";
+
             Console.WriteLine(path);
             Tensor<float> input = new DenseTensor<float>(new[] {32, 32});
             Tensor<float> output = new DenseTensor<float>(new[] {1, 4, 4});
@@ -23,7 +23,7 @@ namespace ONNXModelExample
                 }
             }
 
-            Console.WriteLine(input.GetArrayString());
+            //Console.WriteLine(input.GetArrayString());
 
             // Setup inputs
             List<NamedOnnxValue> inputs = new List<NamedOnnxValue>

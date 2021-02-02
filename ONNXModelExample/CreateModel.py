@@ -28,9 +28,9 @@ print(result.numpy())
 
 #save keras model
 
-model.save(os.getcwd()+"\\myKerasModel")
+model.save(os.getcwd()+"/myKerasModel")
 
 #save model
 
 onnxModel = k2o.convert_keras(model, 'myOnnxModel', target_opset=7)
-k2o.save_model(onnxModel, os.getcwd()+"\\myModel.onnx")
+k2o.save_model(onnxModel, os.getcwd()+"/myModel.onnx")

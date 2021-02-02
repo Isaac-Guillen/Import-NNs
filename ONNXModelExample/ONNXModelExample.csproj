@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>ONNXModelExample</AssemblyName>
+    <RootNamespace>ONNXModelExample</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="myModel.onnx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.6.0" />
+  </ItemGroup>
+
+</Project>
